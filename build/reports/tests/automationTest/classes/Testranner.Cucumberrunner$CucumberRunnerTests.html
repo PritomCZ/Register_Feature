@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Testranner.Cucumberrunner$CucumberRunnerTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Testranner.Cucumberrunner$CucumberRunnerTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/Testranner.html">Testranner</a> &gt; Cucumberrunner$CucumberRunnerTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">13.282s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="runScenario[0](&quot;user can register from the valid data&quot;, &quot;Optional[Register]&quot;)"></a>
+<h3 class="failures">runScenario[0](&quot;user can register from the valid data&quot;, &quot;Optional[Register]&quot;)</h3>
+<span class="code">
+<pre>java.lang.NullPointerException
+	at Stepdefination.RegisterStepdefs.userEnterFristNameAndLastNameAndEmail(RegisterStepdefs.java:47)
+	at ✽.user enter 'Pritom' and 'Cruze' and 'cruzepritom@gmail.com'(file:///D:/DataProvaiterr/src/test/resources/Feature/login/register.feature:6)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">runScenario[0](&quot;user can register from the valid data&quot;, &quot;Optional[Register]&quot;)</td>
+<td class="failures">13.282s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@smoke
+Scenario Outline: user can register from the valid data            # src/test/resources/Feature/login/register.feature:13
+  Given user base url                                              # Stepdefination.RegisterStepdefs.userBaseUrl()
+  When user enter 'Pritom' and 'Cruze' and 'cruzepritom@gmail.com' # Stepdefination.RegisterStepdefs.userEnterFristNameAndLastNameAndEmail(java.lang.String,java.lang.String,java.lang.String)
+      java.lang.NullPointerException
+	at Stepdefination.RegisterStepdefs.userEnterFristNameAndLastNameAndEmail(RegisterStepdefs.java:47)
+	at âœ½.user enter 'Pritom' and 'Cruze' and 'cruzepritom@gmail.com'(file:///D:/DataProvaiterr/src/test/resources/Feature/login/register.feature:6)
+
+  And also enter 'pritom' and 'pritom'                             # Stepdefination.RegisterStepdefs.alsoEnterPasswordAndRepeatPassword(java.lang.String,java.lang.String)
+  And enter the register button                                    # Stepdefination.RegisterStepdefs.enterTheRegisterButton()
+  Then user find the home page                                     # Stepdefination.RegisterStepdefs.userFindTheHomePage()
+</pre>
+</span>
+</div>
+<div id="tab3" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 112.0.5615.49 (bd2a7bcb881c11e8cfe3078709382934e3916914-refs/branch-heads/5615@{#936}) on port 63427
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+May 01, 2023 11:21:58 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+May 01, 2023 11:21:58 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 112, so returning the closest version found: a no-op implementation
+May 01, 2023 11:21:58 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Unable to find CDP implementation matching 112.
+May 01, 2023 11:21:58 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
+WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.4.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at May 1, 2023 11:22:07 AM</p>
+</div>
+</div>
+</body>
+</html>
