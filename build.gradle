@@ -42,14 +42,7 @@ task automationTest(type: Test) {
         String testValue = System.getProperty("Type");  // parallelTest eta pathacchi
         System.out.println(testValue)
 
-//        if(testValue.equals("perallelTest")){
-//            suites "src/test/perallelTest.xml"
-//        }/*else if(testValue.equals("perallelTest")){
-        suites "src/test/crossBrowser.xml"
-        // }*/
-//        if (testValue.equals("dataProvider")) {
-//            suites "src/test/DataProvider.xml"
-//        }
+
         if (testValue.equals("Cucumber")) {
             suites "src/test/eCom.xml"
         }

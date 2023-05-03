@@ -1,10 +1,12 @@
 package Stepdefination;
 
+import Testranner.Cucumberrunner;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -35,30 +37,34 @@ public class RegisterStepdefs {
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://www.hyrtutorials.com/p/add-padding-to-containers.html");
         driver.manage().window().maximize();
+        Thread.sleep(3000);
 
         JavascriptExecutor js = (JavascriptExecutor) driver; // scroll
         js.executeScript("window.scrollBy(0,350)", "");
+        Thread.sleep(3000);
+       // driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).click();
 
     }
 
     @When("user enter {string} and {string} and {string}")
-    public void userEnterFristNameAndLastNameAndEmail(String fristName, String lastName, String Email) throws InterruptedException {
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("")).sendKeys(fristName);
-        driver.findElement(By.xpath("/html/body/div[2]/div[6]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/article/div/div/form/div[1]/input[2]")).sendKeys(lastName);
-        driver.findElement(By.xpath("/html/body/div[2]/div[6]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/article/div/div/form/div[1]/input[3]")).sendKeys(Email);
+    public void userEnterFristNameAndLastNameAndEmail(String fristName,String lastName,String Email) throws InterruptedException {
+       // driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).click();
+        driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).sendKeys(fristName);
+        driver.findElement(By.xpath("//label[text()=\"Last Name\"]/following-sibling::input[@name=\"name\"]")).sendKeys(lastName);
+        driver.findElement(By.xpath("//label[text()=\"Email\"]/following-sibling::input[@type=\"text\"]")).sendKeys(Email);
         
     }
 
     @And("also enter {string} and {string}")
     public void alsoEnterPasswordAndRepeatPassword(String Password, String repeatPassword) {
-        driver.findElement(By.xpath("/html/body/div[2]/div[6]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/article/div/div/form/div[1]/div[2]/input")).sendKeys(Password);
-        driver.findElement(By.xpath("/html/body/div[2]/div[6]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/article/div/div/form/div[1]/input[4]")).sendKeys(repeatPassword);
+        driver.findElement(By.xpath("//label[text()=\"Password\"]/following::input[@type=\"password\"][1]")).sendKeys(Password);
+        driver.findElement(By.xpath("//label[text()=\"Repeat Password\"]/following-sibling::input[@type=\"password\"]")).sendKeys(repeatPassword);
+
     }
 
     @And("enter the register button")
     public void enterTheRegisterButton() {
-        driver.findElement(By.xpath("/html/body/div[2]/div[6]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/article/div/div/form/div[1]/div[3]/button[1]")).click();
+        driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
     }
 
     @Then("user find the home page")
