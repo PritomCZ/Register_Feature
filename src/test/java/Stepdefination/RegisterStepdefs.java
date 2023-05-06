@@ -34,21 +34,22 @@ public class RegisterStepdefs {
         options.setExperimentalOption("prefs", prefs);
         options.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
         driver.get("https://www.hyrtutorials.com/p/add-padding-to-containers.html");
         driver.manage().window().maximize();
         Thread.sleep(3000);
 
-        JavascriptExecutor js = (JavascriptExecutor) driver; // scroll
-        js.executeScript("window.scrollBy(0,350)", "");
-        Thread.sleep(3000);
-       // driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).click();
 
     }
 
     @When("user enter {string} and {string} and {string}")
     public void userEnterFristNameAndLastNameAndEmail(String fristName,String lastName,String Email) throws InterruptedException {
-       // driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).click();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver; // scroll
+        js.executeScript("window.scrollBy(0,500)");
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).click();
         driver.findElement(By.xpath("//label[text()=\"First Name \"]/following-sibling::input[@name=\"name\"][1]")).sendKeys(fristName);
         driver.findElement(By.xpath("//label[text()=\"Last Name\"]/following-sibling::input[@name=\"name\"]")).sendKeys(lastName);
         driver.findElement(By.xpath("//label[text()=\"Email\"]/following-sibling::input[@type=\"text\"]")).sendKeys(Email);
@@ -64,7 +65,7 @@ public class RegisterStepdefs {
 
     @And("enter the register button")
     public void enterTheRegisterButton() {
-        driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
+        driver.findElement(By.xpath("//button[text()=\"Register\"]")).click();
     }
 
     @Then("user find the home page")
